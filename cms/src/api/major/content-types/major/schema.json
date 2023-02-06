@@ -4,17 +4,116 @@
   "info": {
     "singularName": "major",
     "pluralName": "majors",
-    "displayName": "Majors"
+    "displayName": "Majors",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "shorthand": {
+      "type": "uid"
+    },
+    "name": {
       "type": "string"
     },
-    "slug": {
+    "description": {
+      "type": "string"
+    },
+    "banner_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "banner_image_alt_text": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "majors"
+    },
+    "fundamental_image_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "fundamental_image_1_alt_text": {
+      "type": "string"
+    },
+    "fundamental_heading_1": {
+      "type": "string"
+    },
+    "fundamental_description_1": {
+      "type": "string"
+    },
+    "fundamental_image_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "fundamental_image_2_alt_text": {
+      "type": "string"
+    },
+    "fundamental_heading_2": {
+      "type": "string"
+    },
+    "fundamental_description_2": {
+      "type": "string"
+    },
+    "fundamental_image_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "fundamental_image_3_alt_text": {
+      "type": "string"
+    },
+    "fundamental_heading_3": {
+      "type": "string"
+    },
+    "fundamental_description_3": {
+      "type": "string"
+    },
+    "open_section_title": {
+      "type": "string"
+    },
+    "stat_category_1": {
+      "type": "string"
+    },
+    "stat_1": {
+      "type": "string"
+    },
+    "stat_category_2": {
+      "type": "string"
+    },
+    "stat_2": {
       "type": "string"
     }
   }
