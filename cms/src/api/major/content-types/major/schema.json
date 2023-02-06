@@ -13,18 +13,21 @@
   "pluginOptions": {},
   "attributes": {
     "shorthand": {
-      "type": "uid"
+      "type": "uid",
+      "required": true
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "banner_image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -44,7 +47,7 @@
     "fundamental_image_1": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -56,15 +59,17 @@
       "type": "string"
     },
     "fundamental_heading_1": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "fundamental_description_1": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "fundamental_image_2": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -76,15 +81,17 @@
       "type": "string"
     },
     "fundamental_heading_2": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "fundamental_description_2": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "fundamental_image_3": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -96,25 +103,177 @@
       "type": "string"
     },
     "fundamental_heading_3": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "fundamental_description_3": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "open_section_title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "stat_category_1": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "stat_1": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "stat_category_2": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "stat_2": {
+      "type": "string",
+      "required": true
+    },
+    "open_section_bg_text_1": {
+      "type": "string",
+      "required": false
+    },
+    "open_section_bg_text_2": {
+      "type": "string",
+      "required": false
+    },
+    "open_section_bg_text_3": {
       "type": "string"
+    },
+    "open_section_bg_text_4": {
+      "type": "string"
+    },
+    "open_section_bg_text_5": {
+      "type": "string"
+    },
+    "open_section_description": {
+      "type": "string",
+      "required": true
+    },
+    "career_stat_category_1": {
+      "type": "string",
+      "required": true
+    },
+    "career_stat_1": {
+      "type": "string",
+      "required": true
+    },
+    "career_stat_category_2": {
+      "type": "string",
+      "required": true
+    },
+    "career_stat_2": {
+      "type": "string",
+      "required": true
+    },
+    "job_title_1": {
+      "type": "string",
+      "required": true
+    },
+    "job_title_2": {
+      "type": "string",
+      "required": true
+    },
+    "job_title_3": {
+      "type": "string",
+      "required": true
+    },
+    "job_title_4": {
+      "type": "string",
+      "required": true
+    },
+    "job_title_5": {
+      "type": "string",
+      "required": true
+    },
+    "people_section_title": {
+      "type": "enumeration",
+      "enum": [
+        "Alumni",
+        "Faculty"
+      ],
+      "required": true
+    },
+    "person_1_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "person_1_name": {
+      "type": "string",
+      "required": true
+    },
+    "person_1_job": {
+      "type": "string",
+      "required": true
+    },
+    "person_1_info": {
+      "type": "string",
+      "maxLength": 13
+    },
+    "person_2_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "person_2_name": {
+      "type": "string",
+      "required": true
+    },
+    "person_2_job": {
+      "type": "string",
+      "required": true
+    },
+    "person_2_info": {
+      "type": "string",
+      "maxLength": 13
+    },
+    "person_3_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "person_3_name": {
+      "type": "string",
+      "required": true
+    },
+    "person_3_job": {
+      "type": "string",
+      "required": true
+    },
+    "person_3_info": {
+      "type": "string",
+      "maxLength": 13
+    },
+    "qr_code": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
