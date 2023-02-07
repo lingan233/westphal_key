@@ -1,53 +1,23 @@
 <script>
 	import { onMount } from 'svelte';
-	const endpoint = 'http://localhost:1337/api/majors?populate=*';
+	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
+	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/majors?populate=*`;
 	let tags = [];
-	let allMajors = [];
-	let currentMajor;
+	let majorsMatchTags = [];
 	onMount(async function () {
 		const response = await fetch(endpoint);
-		const data = response.json();
-		allMajors = data.data;
+		const data = await response.json();
 
-		let urlParams = new URLSearchParams(window.location.search);
-		tags = urlParams.get('data').split(',');
-		if (tags.length > 6) {
-			currentMajor = 6;
-		} else {
-			currentMajor = tags.length;
-		}
+		const urlParams = new Proxy(new URLSearchParams(window.location.search), {
+			get: (searchParams, prop) => searchParams.get(prop)
+		});
+		tags = urlParams.data.split(',');
 
-		// console.log(
-		// 	allMajors.map((major) => major.attributes.tags).map((tag) => tag.data),
-		// 	'test2'
-		// );
-		// console.log(allMajors, 'allMajors');
-		// console.log(
-		// 	allMajors.filter((major) => {
-		// 		console.log(major.attributes.tags.data, 'major');
-		// 		return major.attrubutes.tags.data.some((tag) =>
-		// 			tags.includes(allMajors.map((major) => major.attributes.tags.data).map((tag) => tag.data))
-		// 		);
-		// 	})
-		// );
-		// console.log(
-		// 	allMajors.filter((major) => {
-		// 		return major.attributes.tags.data.some((tag) => tags.includes(tag.attributes.tag));
-		// 	})
-		// );
-		// console.log(
-		// 	allMajors.some((tag) =>
-		// 		tags.includes(allMajors.map((major) => major.attributes.tags).map((tag) => tag.data))
-		// 	),
-		// 	'allMajors'
-		// );
-
-		// console.log(
-		// 	allMajors.map((major) => major.attributes.tags).map((tag) => tag.data),
-		// 	'test1'
-		// );
-		function sortMajors(majors) {
-			return majors.sort((a, b) => {
+		majorsMatchTags = data.data
+			.filter((major) => {
+				return major.attributes.tags.data.some((tag) => tags.includes(tag.attributes.tag));
+			})
+			.sort((a, b) => {
 				let scoreA = a.attributes.tags.data.filter((tag) =>
 					tags.includes(tag.attributes.tag)
 				).length;
@@ -56,25 +26,8 @@
 				).length;
 				return scoreB - scoreA;
 			});
-		}
-
-		function getMajors() {
-			console.log(allMajors);
-			return sortMajors(
-				allMajors.filter((major) => {
-					return major.attributes.tags.data.some((tag) => tags.includes(tag.attributes.tag));
-				})
-			);
-		}
+		console.log(majorsMatchTags);
 	});
-
-	// let allMajors = [];
-	// onMount(async () => {
-	// 	const res = await Promise.resolve({
-	// 		json: () => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-	// 	});
-	// 	allMajors = res.json();
-	// });
 </script>
 
 <div class="p-8">
@@ -104,8 +57,8 @@
 		</a>
 	</div>
 	<div class="grid grid-cols-2 font-semibold py-4">
-		<!-- {#each getMajors().slice(0, currentMajor) as major, i}
-			<a href="/detail/{major.id}">
+		{#each majorsMatchTags as major, i}
+			<a href="/detail/{major.attributes.shorthand}">
 				<div class="m-2 relative rounded-lg overflow-hidden text-white">
 					{#if i == 0}
 						<div class="py-1 px-4 m-1 text-xs absolute top-0 rounded-full bg-drexel-light-blue">
@@ -119,19 +72,19 @@
 						</div>
 					{/if}
 					<img
-						src={major.content.cover_img}
-						alt="Avatar"
+						src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
+						alt={major.attributes.banner_image_alt_text}
 						class="object-cover w-full aspect-[3/4]"
 					/>
 					<div
 						class="absolute w-full py-2.5 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-4 p-2"
 					>
-						{major.content.name}
+						{major.attributes.name}
 					</div>
 				</div>
 			</a>
 		{/each}
-		{#each data.majors as major}
+		<!-- {#each data.majors as major}
 			<a href="/detail/{major.id}">
 				<div class="m-2 relative rounded-lg overflow-hidden text-white">
 					<img

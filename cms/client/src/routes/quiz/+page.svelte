@@ -5,8 +5,9 @@
 	import TagGeneration from '$lib/components/quiz/TagGeneration.svelte';
 	import { selected_tags, displaying_tags } from './store';
 	import { onMount } from 'svelte';
+	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 
-	const endpoint = 'http://localhost:1337/api/tags';
+	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/tags`;
 	let tags = [];
 	onMount(async function () {
 		const response = await fetch(endpoint);
