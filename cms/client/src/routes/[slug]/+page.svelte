@@ -3,6 +3,7 @@
 	import Fundamentals from '$lib/components/detail/Fundamentals.svelte';
 	import OpenSection from '$lib/components/detail/OpenSection.svelte';
 	import Careers from '$lib/components/detail/Careers.svelte';
+	import People from '$lib/components/detail/People.svelte';
 
 	export let data;
 </script>
@@ -70,7 +71,21 @@
 </div>
 
 <div class="mt-8">
-	<p>People</p>
+	<People
+		people_section_title={data.attributes.people_section_title}
+		person_1_name={data.attributes.person_1_name}
+		person_1_job={data.attributes.person_1_job}
+		person_1_info={data.attributes.person_1_info}
+		person_1_image={data.attributes.person_1_image}
+		person_2_name={data.attributes.person_2_name}
+		person_2_job={data.attributes.person_2_job}
+		person_2_info={data.attributes.person_2_info}
+		person_2_image={data.attributes.person_2_image}
+		person_3_name={data.attributes.person_3_name}
+		person_3_job={data.attributes.person_3_job}
+		person_3_info={data.attributes.person_3_info}
+		person_3_image={data.attributes.person_3_image}
+	/>
 </div>
 
 <!-- <div class="mt-8">
