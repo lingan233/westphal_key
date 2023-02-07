@@ -4,6 +4,8 @@
 	import OpenSection from '$lib/components/detail/OpenSection.svelte';
 	import Careers from '$lib/components/detail/Careers.svelte';
 	import People from '$lib/components/detail/People.svelte';
+	import LearnMore from '$lib/components/detail/LearnMore.svelte';
+	import Footer from '$lib/components/detail/Footer.svelte';
 
 	export let data;
 </script>
@@ -88,10 +90,10 @@
 	/>
 </div>
 
-<!-- <div class="mt-8">
-	<LearnMore section_data={data} />
+<div class="mt-8">
+	<LearnMore shorthand={data.attributes.shorthand} qr_code={data.attributes.qr_code} />
 </div>
 
 <div>
 	<Footer />
-</div> -->
+</div>

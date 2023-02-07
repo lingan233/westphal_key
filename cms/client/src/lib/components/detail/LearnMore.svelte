@@ -1,5 +1,7 @@
 <script>
-	export let section_data;
+	export let shorthand;
+	export let qr_code;
+	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 </script>
 
 <div class="flex">
@@ -17,12 +19,12 @@
 			</svg>
 		</div>
 		<p class="absolute flex h-full items-center p-5 text-4xl font-semibold text-white">
-			Interested in {section_data.id}
+			Interested in {shorthand}
 		</p>
 	</div>
 
 	<div class="w-36 shrink-0 bg-drexel-light-green px-5 pt-5 pb-3">
-		<img alt="QR Code" src={section_data.content.qr_code} />
+		<img alt="QR Code" src={`${PUBLIC_STRAPI_SERVER_URL}${qr_code.data.attributes.url}`} />
 		<p class="pt-3 text-center text-lg text-white">SCAN ME</p>
 	</div>
 </div>

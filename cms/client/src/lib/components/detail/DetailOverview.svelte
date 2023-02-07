@@ -3,7 +3,7 @@
 	import MajorOverview from '$lib/components/MajorOverview.svelte';
 	import ScrollDown from '$lib/components/ScrollDown.svelte';
 
-	import Logo from '$lib/images/logo.png';
+	import Logo from '$lib/images/Logo.png';
 
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 
