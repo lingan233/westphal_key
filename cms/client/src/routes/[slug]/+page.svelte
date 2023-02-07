@@ -2,6 +2,7 @@
 	import DetailOverview from '$lib/components/detail/DetailOverview.svelte';
 	import Fundamentals from '$lib/components/detail/Fundamentals.svelte';
 	import OpenSection from '$lib/components/detail/OpenSection.svelte';
+	import Careers from '$lib/components/detail/Careers.svelte';
 
 	export let data;
 </script>
@@ -54,11 +55,25 @@
 	/>
 </div>
 
-<!-- <div class="mt-8">
-	<Career section_data={data.content.section_c} />
+<div class="mt-8">
+	<Careers
+		career_stat_category_1={data.attributes.career_stat_category_1}
+		career_stat_1={data.attributes.career_stat_1}
+		career_stat_category_2={data.attributes.career_stat_category_2}
+		career_stat_2={data.attributes.career_stat_2}
+		job_title_1={data.attributes.job_title_1}
+		job_title_2={data.attributes.job_title_2}
+		job_title_3={data.attributes.job_title_3}
+		job_title_4={data.attributes.job_title_4}
+		job_title_5={data.attributes.job_title_5}
+	/>
 </div>
 
 <div class="mt-8">
+	<p>People</p>
+</div>
+
+<!-- <div class="mt-8">
 	<LearnMore section_data={data} />
 </div>
 

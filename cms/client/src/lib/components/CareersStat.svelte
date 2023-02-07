@@ -1,5 +1,5 @@
 <script>
-	export let stat_description;
+	export let stat_category;
 	export let stat;
 	export let position;
 </script>
@@ -10,7 +10,7 @@
 			<div class="relative z-10 text-5xl font-bold text-drexel-light-blue">{stat}</div>
 			<div class="relative -left-4 flex items-center">
 				<div class="mx-2 h-20 w-2.5 shrink-0 bg-drexel-light-orange" />
-				<div class="text-drexel-light-blue">{stat_description}</div>
+				<div class="text-drexel-light-blue">{stat_category}</div>
 			</div>
 		</div>
 	</div>
@@ -18,7 +18,7 @@
 	<div class="mx-10">
 		<div class="wrap my-5 flex items-center justify-end">
 			<div class="relative -right-4 flex items-center">
-				<div class="text-right text-drexel-light-blue">{stat_description}</div>
+				<div class="text-right text-drexel-light-blue">{stat_category}</div>
 				<div class="mx-2 h-20 w-2.5 shrink-0 bg-drexel-light-orange" />
 			</div>
 			<div class="relative z-10 text-5xl font-bold text-drexel-light-blue">{stat}</div>
