@@ -6,24 +6,24 @@
 	@font-face {
 		font-family: 'Futura Std';
 		font-weight: 400;
-		src: url('/FuturaStdBook.otf');
+		src: url('/FuturaStdBook.woff');
 	}
 
 	@font-face {
 		font-family: 'Futura Std';
 		font-weight: 500;
-		src: url('/FuturaStdMedium.otf');
+		src: url('/FuturaStdMedium.woff');
 	}
 
 	@font-face {
 		font-family: 'Futura Std';
 		font-weight: 600;
-		src: url('/FuturaStdHeavy.otf');
+		src: url('/FuturaStdHeavy.woff');
 	}
 
 	@font-face {
 		font-family: 'Futura Std';
 		font-weight: 700;
-		src: url('/FuturaStdBold.otf');
+		src: url('/FuturaStdBold.woff');
 	}
 }
