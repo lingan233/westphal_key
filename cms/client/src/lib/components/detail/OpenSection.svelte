@@ -4,9 +4,17 @@
 	import OpenSectionStat from '$lib/components/OpenSectionStat.svelte';
 	import OpenSectionDescription from '$lib/components/OpenSectionDescription.svelte';
 
-	export let section_data;
 	export let open_section_title;
 	export let open_section_bg_text_1;
+	export let open_section_bg_text_2;
+	export let open_section_bg_text_3;
+	export let open_section_bg_text_4;
+	export let open_section_bg_text_5;
+	export let stat_category_1;
+	export let stat_1;
+	export let stat_category_2;
+	export let stat_2;
+	export let open_section_description;
 </script>
 
 <SectionTitle section_title={open_section_title} title_position="right" />
@@ -16,19 +24,17 @@
 			<OpenSectionBgText company_name={company} />
 		{/each} -->
 		<OpenSectionBgText bg_text={open_section_bg_text_1} />
+		<OpenSectionBgText bg_text={open_section_bg_text_2} />
+		<OpenSectionBgText bg_text={open_section_bg_text_3} />
+		<OpenSectionBgText bg_text={open_section_bg_text_4} />
+		<OpenSectionBgText bg_text={open_section_bg_text_5} />
 	</div>
 
 	<div class="absolute top-1/2 -translate-y-1/2">
-		<OpenSectionStat
-			stat_name={section_data.content.stat_1.name}
-			stat={section_data.content.stat_1.stat}
-		/>
-		<OpenSectionStat
-			stat_name={section_data.content.stat_2.name}
-			stat={section_data.content.stat_2.stat}
-		/>
+		<OpenSectionStat stat_category={stat_category_1} stat={stat_1} />
+		<OpenSectionStat stat_category={stat_category_2} stat={stat_2} />
 	</div>
 </div>
 <div class="mx-auto mt-4 w-[90%]">
-	<OpenSectionDescription coop_description={section_data.content.description} />
+	<OpenSectionDescription description={open_section_description} />
 </div>

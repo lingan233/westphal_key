@@ -38,9 +38,21 @@
 	/>
 </div>
 
-<!-- <div class="mt-8">
-	<OpenSection section_data={data.content.section_b} />
-</div> -->
+<div class="mt-8">
+	<OpenSection
+		open_section_title={data.attributes.open_section_title}
+		open_section_bg_text_1={data.attributes.open_section_bg_text_1}
+		open_section_bg_text_2={data.attributes.open_section_bg_text_2}
+		open_section_bg_text_3={data.attributes.open_section_bg_text_3}
+		open_section_bg_text_4={data.attributes.open_section_bg_text_4}
+		open_section_bg_text_5={data.attributes.open_section_bg_text_5}
+		stat_category_1={data.attributes.stat_category_1}
+		stat_1={data.attributes.stat_1}
+		stat_category_2={data.attributes.stat_category_2}
+		stat_2={data.attributes.stat_2}
+		open_section_description={data.attributes.open_section_description}
+	/>
+</div>
 
 <!-- <div class="mt-8">
 	<Career section_data={data.content.section_c} />
