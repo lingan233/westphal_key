@@ -1,6 +1,6 @@
 <script>
 	export let linkUrl;
-	import BackArrow from '$lib/svg/BackArrow.svg';
+	import BackArrow from '$lib/images/BackArrow.svg';
 </script>
 
 <a

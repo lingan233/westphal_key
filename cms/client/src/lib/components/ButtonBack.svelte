@@ -1,5 +1,5 @@
 <script>
-	import back_arrow from '$lib/svg/BackArrow.svg';
+	import back_arrow from '$lib/images/BackArrow.svg';
 </script>
 
 <button

@@ -1,5 +1,5 @@
 <script>
-	import cross from '$lib/svg/cross.svg';
+	import cross from '$lib/images/cross.svg';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();

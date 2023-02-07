@@ -58,7 +58,7 @@
 	</div>
 	<div class="grid grid-cols-2 font-semibold py-4">
 		{#each majorsMatchTags as major, i}
-			<a href="/detail/{major.attributes.shorthand}">
+			<a href="/{major.attributes.shorthand}">
 				<div class="m-2 relative rounded-lg overflow-hidden text-white">
 					{#if i == 0}
 						<div class="py-1 px-4 m-1 text-xs absolute top-0 rounded-full bg-drexel-light-blue">
@@ -73,7 +73,7 @@
 					{/if}
 					<img
 						src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
-						alt={major.attributes.banner_image_alt_text}
+						alt={major.attributes.banner_image.data.attributes.alternativeText}
 						class="object-cover w-full aspect-[3/4]"
 					/>
 					<div

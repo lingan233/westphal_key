@@ -1,5 +1,5 @@
 <script>
-	import finger_click from '$lib/svg/FingerClick.svg';
+	import finger_click from '$lib/images/FingerClick.svg';
 </script>
 
 <a href="/quiz">
