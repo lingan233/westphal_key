@@ -44,14 +44,19 @@
 </script>
 
 <SectionTitle section_title="Fundamentals" title_position="left" />
-<div class="relative">
-	<div class={`${active_slide_value === 0 ? 'block' : 'hidden'}`}>
+<div class="relative md:flex md:overflow-x-auto md:overflow-y-hidden md:p-5 md:pt-0 md:gap-6">
+	<div
+		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
+			active_slide_value === 0 ? 'block' : 'hidden md:block'
+		}`}
+	>
 		<div class="relative">
 			<img
 				alt={fundamental_image_1.data.attributes.alternativeText}
 				src={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_1.data.attributes.url}`}
+				class=""
 			/>
-			<div class="absolute left-0 bottom-0 bg-drexel-light-blue">
+			<div class="absolute left-0 bottom-0 bg-drexel-light-blue md:hidden">
 				<div class="flex items-center">
 					<button on:click={prevSlide}>
 						<svg
@@ -92,13 +97,17 @@
 			</p>
 		</div>
 	</div>
-	<div class={`${active_slide_value === 1 ? 'block' : 'hidden'}`}>
+	<div
+		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
+			active_slide_value === 1 ? 'block' : 'hidden md:block'
+		}`}
+	>
 		<div class="relative">
 			<img
 				alt={fundamental_image_2.data.attributes.alternativeText}
 				src={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_2.data.attributes.url}`}
 			/>
-			<div class="absolute left-0 bottom-0 bg-drexel-light-blue">
+			<div class="absolute left-0 bottom-0 bg-drexel-light-blue md:hidden">
 				<div class="flex items-center">
 					<button on:click={prevSlide}>
 						<svg
@@ -139,13 +148,17 @@
 			</p>
 		</div>
 	</div>
-	<div class={`${active_slide_value === 2 ? 'block' : 'hidden'}`}>
+	<div
+		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
+			active_slide_value === 2 ? 'block' : 'hidden md:block'
+		}`}
+	>
 		<div class="relative">
 			<img
 				alt={fundamental_image_3.data.attributes.alternativeText}
 				src={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_3.data.attributes.url}`}
 			/>
-			<div class="absolute left-0 bottom-0 bg-drexel-light-blue">
+			<div class="absolute left-0 bottom-0 bg-drexel-light-blue md:hidden">
 				<div class="flex items-center">
 					<button on:click={prevSlide}>
 						<svg

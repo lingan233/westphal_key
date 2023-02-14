@@ -10,16 +10,6 @@
 	export let data;
 </script>
 
-<!-- <script>
-	import DetailOverview from '../ui/DetailOverview.svelte';
-	import DetailSectionA from '../ui/DetailSectionA.svelte';
-	import DetailSectionB from '../ui/DetailSectionB.svelte';
-	import DetailSectionC from '../ui/DetailSectionC.svelte';
-	import LearnMore from '../ui/LearnMore.svelte';
-	import Footer from '../ui/Footer.svelte';
-	export let data;
-</script> -->
-
 <div>
 	<DetailOverview
 		banner_image={data.attributes.banner_image}

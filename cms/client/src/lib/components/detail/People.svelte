@@ -20,7 +20,7 @@
 </script>
 
 <SectionTitle section_title={people_section_title} title_position="right" />
-<div class="mt-2 flex overflow-x-auto overflow-y-hidden p-5">
+<div class="mt-2 flex overflow-x-auto overflow-y-hidden p-5 lg:justify-center">
 	<Person
 		bg_color="#C14C31"
 		name={person_1_name}
@@ -30,7 +30,7 @@
 		alt_text={person_1_image.data.attributes.alternativeText}
 	/>
 	<Person
-		bg_color="#006298"
+		bg_color="#6CACE4"
 		name={person_2_name}
 		job={person_2_job}
 		info={person_2_info}
@@ -38,7 +38,7 @@
 		alt_text={person_2_image.data.attributes.alternativeText}
 	/>
 	<Person
-		bg_color="#FF8F1C"
+		bg_color="#006294"
 		name={person_3_name}
 		job={person_3_job}
 		info={person_3_info}
