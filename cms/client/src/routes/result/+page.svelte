@@ -38,18 +38,16 @@
 
 <div class="py-10">
 	<Header />
-	<!-- <div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue my-4">
+	<div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue mx-4 my-8">
 		<h2
 			class="absolute top-0 left-4 -translate-y-1/2 bg-white p-1 px-2 text-drexel-dark-blue rounded-full"
 		>
 			Interests Picked
 		</h2>
-		<div class="flex max-h-full flex-wrap gap-2 overflow-scroll px-4 py-2 pt-4 align-top">
+		<div class="flex max-h-full flex-wrap gap-2 overflow-scroll px-4 py-2 pt-5 align-top">
 			{#each tags as tag}
-				<button
-					class="tags flex h-fit items-center justify-center gap-1 rounded-full border border-drexel-light-blue py-0.5 px-0.5 leading-4"
-				>
-					<p class="p-1 text-drexel-dark-blue">{tag}</p>
+				<button class="rounded-lg border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue">
+					<p>{tag}</p>
 				</button>
 			{/each}
 		</div>
@@ -59,20 +57,16 @@
 		>
 			Search Again
 		</a>
-	</div> -->
-	<div class="grid grid-cols-2 font-semibold py-4">
+	</div>
+	<div class="grid grid-cols-2 font-semibold pt-2 pb-8 px-4">
 		{#each majorsMatchTags as major, i}
 			<a href="/{major.attributes.shorthand}">
-				<div class="m-2 relative rounded-lg overflow-hidden text-white">
+				<div class="m-2 relative rounded-lg text-white">
 					{#if i == 0}
-						<div class="py-1 px-4 m-1 text-xs absolute top-0 rounded-full bg-drexel-light-blue">
-							Best Match
-						</div>
-					{:else}
 						<div
-							class="py-1 px-4 m-1 text-xs absolute top-0 rounded-full outline bg-white outline-drexel-light-blue text-drexel-light-blue"
+							class="border-4 border-white py-1 px-4 text-base text-drexel-dark-blue absolute -left-3 -top-3 rounded-full bg-drexel-yellow"
 						>
-							No.{i + 1}
+							Best Match
 						</div>
 					{/if}
 					<img
@@ -81,7 +75,7 @@
 						class="object-cover w-full aspect-[3/4]"
 					/>
 					<div
-						class="absolute w-full py-2.5 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-4 p-2"
+						class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-2"
 					>
 						{major.attributes.name}
 					</div>

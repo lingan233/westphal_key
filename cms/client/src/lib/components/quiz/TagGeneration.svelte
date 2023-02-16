@@ -4,6 +4,7 @@
 	const dispatch = createEventDispatcher();
 
 	export let tags;
+	export let selected_tags;
 
 	$: tags = tags;
 
@@ -15,7 +16,11 @@
 <div class="flex overflow-x-auto overflow-y-hidden p-5 gap-4">
 	<div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
 		{#each tags.slice(0, 14) as tag}
-			<Pill on:onTagSelect={onTagSelect} {tag} />
+			{#if selected_tags.includes(tag)}
+				<Pill on:onTagSelect={onTagSelect} {tag} selected />
+			{:else}
+				<Pill on:onTagSelect={onTagSelect} {tag} />
+			{/if}
 		{/each}
 	</div>
 	<div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">

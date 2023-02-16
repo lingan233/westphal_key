@@ -9,6 +9,7 @@
 
 	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/tags`;
 	let tags = [];
+
 	onMount(async function () {
 		const response = await fetch(endpoint);
 		const data = await response.json();
@@ -34,15 +35,11 @@
 	<Header selected_tags={$selected_tags} />
 
 	<div>
-		<div class="grid grid-rows-6">
-			<div />
-			<div />
-			<div />
-			<div />
-			<div />
-			<div />
-		</div>
-		<TagGeneration on:onTagSelectBubble={onTagSelect} tags={$displaying_tags} />
+		<TagGeneration
+			on:onTagSelectBubble={onTagSelect}
+			tags={$displaying_tags}
+			selected_tags={$selected_tags}
+		/>
 		<SelectedTags on:onTagClose={onTagClose} selected_tags={$selected_tags} />
 	</div>
 </main>
