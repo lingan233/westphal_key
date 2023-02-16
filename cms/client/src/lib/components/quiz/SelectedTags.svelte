@@ -19,7 +19,7 @@
 		>
 			View Results
 		</a>
-		<div class="flex max-h-full flex-wrap gap-2 overflow-scroll px-4 py-2 pt-6 align-top">
+		<div class="flex max-h-full flex-wrap gap-2 overflow-auto px-4 py-2 pt-6 align-top">
 			{#each tags as tag}
 				<PillCloseable on:onTagClose={onTagClose} {tag} />
 			{/each}
