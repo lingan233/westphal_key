@@ -25,12 +25,20 @@
 	</div>
 	<div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
 		{#each tags.slice(15, 29) as tag}
-			<Pill on:onTagSelect={onTagSelect} {tag} />
+			{#if selected_tags.includes(tag)}
+				<Pill on:onTagSelect={onTagSelect} {tag} selected />
+			{:else}
+				<Pill on:onTagSelect={onTagSelect} {tag} />
+			{/if}
 		{/each}
 	</div>
 	<div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
 		{#each tags.slice(30, 44) as tag}
-			<Pill on:onTagSelect={onTagSelect} {tag} />
+			{#if selected_tags.includes(tag)}
+				<Pill on:onTagSelect={onTagSelect} {tag} selected />
+			{:else}
+				<Pill on:onTagSelect={onTagSelect} {tag} />
+			{/if}
 		{/each}
 	</div>
 </div>
