@@ -3,7 +3,7 @@ import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 
 const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/majors?populate=*`;
 
-export const load = async ({ params }) => {
+export const load = async ({ fetch, params }) => {
 	try {
 		const response = await fetch(endpoint);
 		const data = await response.json();

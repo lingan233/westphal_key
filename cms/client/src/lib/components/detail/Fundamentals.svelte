@@ -44,14 +44,19 @@
 </script>
 
 <SectionTitle section_title="Fundamentals" title_position="left" />
-<div class="relative">
-	<div class={`${active_slide_value === 0 ? 'block' : 'hidden'}`}>
+<div class="relative md:flex md:overflow-x-auto md:overflow-y-hidden md:p-5 md:pt-2 md:gap-8">
+	<div
+		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
+			active_slide_value === 0 ? 'block' : 'hidden md:block'
+		}`}
+	>
 		<div class="relative">
 			<img
 				alt={fundamental_image_1.data.attributes.alternativeText}
 				src={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_1.data.attributes.url}`}
+				class=""
 			/>
-			<div class="absolute left-0 bottom-0 bg-drexel-light-blue">
+			<div class="absolute left-0 bottom-0 bg-drexel-light-blue md:hidden">
 				<div class="flex items-center">
 					<button on:click={prevSlide}>
 						<svg
@@ -85,20 +90,24 @@
 				</div>
 			</div>
 		</div>
-		<div class="mx-auto w-[90%]">
+		<div class="mx-auto w-[90%] md:w-[100%]">
 			<p class="mt-4 text-xl font-semibold text-drexel-light-blue">{fundamental_heading_1}</p>
 			<p class="text-drexel-dark-blue">
 				{fundamental_description_1}
 			</p>
 		</div>
 	</div>
-	<div class={`${active_slide_value === 1 ? 'block' : 'hidden'}`}>
+	<div
+		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
+			active_slide_value === 1 ? 'block' : 'hidden md:block'
+		}`}
+	>
 		<div class="relative">
 			<img
 				alt={fundamental_image_2.data.attributes.alternativeText}
 				src={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_2.data.attributes.url}`}
 			/>
-			<div class="absolute left-0 bottom-0 bg-drexel-light-blue">
+			<div class="absolute left-0 bottom-0 bg-drexel-light-blue md:hidden">
 				<div class="flex items-center">
 					<button on:click={prevSlide}>
 						<svg
@@ -132,20 +141,24 @@
 				</div>
 			</div>
 		</div>
-		<div class="mx-auto w-[90%]">
+		<div class="mx-auto w-[90%] md:w-[100%]">
 			<p class="mt-4 text-xl font-semibold text-drexel-light-blue">{fundamental_heading_2}</p>
 			<p class="text-drexel-dark-blue">
 				{fundamental_description_2}
 			</p>
 		</div>
 	</div>
-	<div class={`${active_slide_value === 2 ? 'block' : 'hidden'}`}>
+	<div
+		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
+			active_slide_value === 2 ? 'block' : 'hidden md:block'
+		}`}
+	>
 		<div class="relative">
 			<img
 				alt={fundamental_image_3.data.attributes.alternativeText}
 				src={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_3.data.attributes.url}`}
 			/>
-			<div class="absolute left-0 bottom-0 bg-drexel-light-blue">
+			<div class="absolute left-0 bottom-0 bg-drexel-light-blue md:hidden">
 				<div class="flex items-center">
 					<button on:click={prevSlide}>
 						<svg
@@ -179,7 +192,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mx-auto w-[90%]">
+		<div class="mx-auto w-[90%] md:w-[100%]">
 			<p class="mt-4 text-xl font-semibold text-drexel-light-blue">{fundamental_heading_3}</p>
 			<p class="text-drexel-dark-blue">
 				{fundamental_description_3}

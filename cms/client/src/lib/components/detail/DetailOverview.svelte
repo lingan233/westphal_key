@@ -16,14 +16,16 @@
 	class="relative h-screen w-full bg-center bg-cover"
 	style={`background-image: linear-gradient(to bottom, #00000080, #00000000, #000000CC), url('${PUBLIC_STRAPI_SERVER_URL}${banner_image.data.attributes.url}');`}
 >
-	<img alt="logo" class="absolute right-[10%] float-right w-2/5 max-w-[200px]" src={Logo} />
+	<img alt="logo" class="absolute right-[10%] float-right w-[150px]" src={Logo} />
 	<div class="absolute top-[10%]">
 		<ButtonBack />
 	</div>
-	<div class="absolute bottom-[20%] w-[90%] bg-drexel-dark-blue p-8">
+	<div
+		class="absolute bottom-[20%] w-[90%] sm:w-[50%] md:w-[45%] lg:w-[40%] bg-drexel-dark-blue p-8"
+	>
 		<MajorOverview major_name={name} major_description={description} />
 	</div>
-	<div class="absolute bottom-[5%] left-0 right-0 mx-auto">
+	<div class="absolute bottom-[5%] left-0 right-0 mx-auto md:hidden">
 		<ScrollDown />
 	</div>
 </div>

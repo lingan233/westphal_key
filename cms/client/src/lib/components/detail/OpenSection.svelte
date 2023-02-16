@@ -18,23 +18,25 @@
 </script>
 
 <SectionTitle section_title={open_section_title} title_position="right" />
-<div class="relative w-full bg-drexel-dark-blue">
-	<div>
-		<!-- {#each section_data.content.companies as company}
+<div class="md:flex md:bg-drexel-dark-blue md:gap-8 md:mt-4 md:items-center">
+	<div class="relative w-full bg-drexel-dark-blue">
+		<div class="py-1">
+			<!-- {#each section_data.content.companies as company}
 			<OpenSectionBgText company_name={company} />
 		{/each} -->
-		<OpenSectionBgText bg_text={open_section_bg_text_1} />
-		<OpenSectionBgText bg_text={open_section_bg_text_2} />
-		<OpenSectionBgText bg_text={open_section_bg_text_3} />
-		<OpenSectionBgText bg_text={open_section_bg_text_4} />
-		<OpenSectionBgText bg_text={open_section_bg_text_5} />
-	</div>
+			<OpenSectionBgText bg_text={open_section_bg_text_1} />
+			<OpenSectionBgText bg_text={open_section_bg_text_2} />
+			<OpenSectionBgText bg_text={open_section_bg_text_3} />
+			<OpenSectionBgText bg_text={open_section_bg_text_4} />
+			<OpenSectionBgText bg_text={open_section_bg_text_5} />
+		</div>
 
-	<div class="absolute top-1/2 -translate-y-1/2">
-		<OpenSectionStat stat_category={stat_category_1} stat={stat_1} />
-		<OpenSectionStat stat_category={stat_category_2} stat={stat_2} />
+		<div class="absolute top-1/2 -translate-y-1/2">
+			<OpenSectionStat stat_category={stat_category_1} stat={stat_1} />
+			<OpenSectionStat stat_category={stat_category_2} stat={stat_2} />
+		</div>
 	</div>
-</div>
-<div class="mx-auto mt-4 w-[90%]">
-	<OpenSectionDescription description={open_section_description} />
+	<div class="mx-auto mt-4 w-[90%]">
+		<OpenSectionDescription description={open_section_description} />
+	</div>
 </div>

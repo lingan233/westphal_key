@@ -2,4 +2,9 @@
 	export let description;
 </script>
 
-<p class="text-drexel-dark-blue">{description}</p>
+<div class="relative text-drexel-dark-blue md:text-white">
+	<div
+		class="pointer-events-none bg-transparent w-1/2 h-full md:border-l-[3px] md:border-t-[3px] md:border-drexel-bright-blue absolute left-0 top-0"
+	/>
+	<p class="md:p-8 md:text-lg">{description}</p>
+</div>

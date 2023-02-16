@@ -6,22 +6,22 @@
 
 {#if position === 'normal'}
 	<div class="mx-10">
-		<div class="wrap my-5 flex items-center">
-			<div class="relative z-10 text-5xl font-bold text-drexel-light-blue">{stat}</div>
+		<div class="my-5 flex items-center">
+			<div class="relative z-10 text-5xl font-bold text-drexel-light-blue lg:text-6xl">{stat}</div>
 			<div class="relative -left-4 flex items-center">
-				<div class="mx-2 h-20 w-2.5 shrink-0 bg-drexel-light-orange" />
-				<div class="text-drexel-light-blue">{stat_category}</div>
+				<div class="mx-2 h-20 w-2.5 shrink-0 bg-drexel-light-orange lg:w-3 lg:h-24" />
+				<div class="text-drexel-light-blue lg:text-xl">{stat_category}</div>
 			</div>
 		</div>
 	</div>
 {:else if position === 'reverse'}
 	<div class="mx-10">
-		<div class="wrap my-5 flex items-center justify-end">
+		<div class="my-5 flex items-center justify-end">
 			<div class="relative -right-4 flex items-center">
-				<div class="text-right text-drexel-light-blue">{stat_category}</div>
-				<div class="mx-2 h-20 w-2.5 shrink-0 bg-drexel-light-orange" />
+				<div class="text-right text-drexel-light-blue lg:text-xl">{stat_category}</div>
+				<div class="mx-2 h-20 w-2.5 shrink-0 bg-drexel-light-orange lg:w-3 lg:h-24" />
 			</div>
-			<div class="relative z-10 text-5xl font-bold text-drexel-light-blue">{stat}</div>
+			<div class="relative z-10 text-5xl font-bold text-drexel-light-blue lg:text-6xl">{stat}</div>
 		</div>
 	</div>
 {/if}
