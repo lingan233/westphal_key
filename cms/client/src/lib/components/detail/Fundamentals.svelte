@@ -44,7 +44,7 @@
 </script>
 
 <SectionTitle section_title="Fundamentals" title_position="left" />
-<div class="relative md:flex md:overflow-x-auto md:overflow-y-hidden md:p-5 md:pt-0 md:gap-6">
+<div class="relative md:flex md:overflow-x-auto md:overflow-y-hidden md:p-5 md:pt-2 md:gap-8">
 	<div
 		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
 			active_slide_value === 0 ? 'block' : 'hidden md:block'
@@ -90,7 +90,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mx-auto w-[90%]">
+		<div class="mx-auto w-[90%] md:w-[100%]">
 			<p class="mt-4 text-xl font-semibold text-drexel-light-blue">{fundamental_heading_1}</p>
 			<p class="text-drexel-dark-blue">
 				{fundamental_description_1}
@@ -141,7 +141,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mx-auto w-[90%]">
+		<div class="mx-auto w-[90%] md:w-[100%]">
 			<p class="mt-4 text-xl font-semibold text-drexel-light-blue">{fundamental_heading_2}</p>
 			<p class="text-drexel-dark-blue">
 				{fundamental_description_2}
@@ -192,7 +192,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mx-auto w-[90%]">
+		<div class="mx-auto w-[90%] md:w-[100%]">
 			<p class="mt-4 text-xl font-semibold text-drexel-light-blue">{fundamental_heading_3}</p>
 			<p class="text-drexel-dark-blue">
 				{fundamental_description_3}

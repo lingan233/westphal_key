@@ -6,14 +6,26 @@
 	export let tags;
 
 	$: tags = tags;
-	
+
 	function onTagSelect(event) {
 		dispatch('onTagSelectBubble', event.detail);
 	}
 </script>
 
-<div class="flex flex-wrap items-start justify-center gap-2">
-	{#each tags as tag}
-		<Pill on:onTagSelect={onTagSelect} {tag} />
-	{/each}
+<div class="flex overflow-x-auto overflow-y-hidden p-5 gap-4">
+	<div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
+		{#each tags.slice(0, 14) as tag}
+			<Pill on:onTagSelect={onTagSelect} {tag} />
+		{/each}
+	</div>
+	<div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
+		{#each tags.slice(15, 29) as tag}
+			<Pill on:onTagSelect={onTagSelect} {tag} />
+		{/each}
+	</div>
+	<div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
+		{#each tags.slice(30, 44) as tag}
+			<Pill on:onTagSelect={onTagSelect} {tag} />
+		{/each}
+	</div>
 </div>

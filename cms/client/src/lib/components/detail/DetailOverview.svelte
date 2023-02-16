@@ -21,11 +21,11 @@
 		<ButtonBack />
 	</div>
 	<div
-		class="absolute bottom-[20%] w-[90%] sm:w-[80%] md:w-[75%] lg:w-[50%] bg-drexel-dark-blue p-8"
+		class="absolute bottom-[20%] w-[90%] sm:w-[50%] md:w-[45%] lg:w-[40%] bg-drexel-dark-blue p-8"
 	>
 		<MajorOverview major_name={name} major_description={description} />
 	</div>
-	<div class="absolute bottom-[5%] left-0 right-0 mx-auto">
+	<div class="absolute bottom-[5%] left-0 right-0 mx-auto md:hidden">
 		<ScrollDown />
 	</div>
 </div>

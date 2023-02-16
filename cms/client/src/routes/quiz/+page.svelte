@@ -30,11 +30,19 @@
 	}
 </script>
 
-<main class="grid h-screen grid-rows-[10vh_1fr_3rem] gap-8 p-5 py-16">
+<main class="py-10">
 	<Header selected_tags={$selected_tags} />
 
-	<div class="grid px-[5vw] gap-[5vw]">
-		<SelectedTags on:onTagClose={onTagClose} selected_tags={$selected_tags} />
+	<div>
+		<div class="grid grid-rows-6">
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+		</div>
 		<TagGeneration on:onTagSelectBubble={onTagSelect} tags={$displaying_tags} />
+		<SelectedTags on:onTagClose={onTagClose} selected_tags={$selected_tags} />
 	</div>
 </main>

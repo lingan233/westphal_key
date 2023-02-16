@@ -18,7 +18,8 @@ module.exports = {
 				'drexel-light-green': '#B7BF10'
 			},
 			screens: {
-				custom: '500px'
+				custom_500: '500px',
+				custom_600: '600px'
 			}
 		}
 	}

@@ -18,7 +18,7 @@
 </script>
 
 <SectionTitle section_title={open_section_title} title_position="right" />
-<div class="md:flex md:bg-drexel-dark-blue md:gap-8 md:items-center">
+<div class="md:flex md:bg-drexel-dark-blue md:gap-8 md:mt-4 md:items-center">
 	<div class="relative w-full bg-drexel-dark-blue">
 		<div class="py-1">
 			<!-- {#each section_data.content.companies as company}

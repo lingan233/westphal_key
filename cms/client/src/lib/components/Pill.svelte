@@ -10,5 +10,6 @@
 	}
 </script>
 
-<button on:click={onTagSelect} class="tags rounded-full border border-drexel-light-blue py-1 px-3"
-	>{tag}</button>
+<button on:click={onTagSelect} class="rounded-lg border border-drexel-light-blue px-3 h-10"
+	>{tag}</button
+>

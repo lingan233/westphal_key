@@ -1,12 +1,19 @@
 <script>
+	import Header from '$lib/components/result/Header.svelte';
+	import SubHeader from '$lib/components/result/SubHeader.svelte';
 	import { onMount } from 'svelte';
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
+
 	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/majors?populate=*`;
 	let tags = [];
 	let majorsMatchTags = [];
+	let allMajors = [];
+
 	onMount(async function () {
 		const response = await fetch(endpoint);
 		const data = await response.json();
+
+		allMajors = data.data;
 
 		const urlParams = new Proxy(new URLSearchParams(window.location.search), {
 			get: (searchParams, prop) => searchParams.get(prop)
@@ -26,15 +33,12 @@
 				).length;
 				return scoreB - scoreA;
 			});
-		console.log(majorsMatchTags);
 	});
 </script>
 
-<div class="p-8">
-	<div class="m-2 text-2xl font-bold text-drexel-dark-blue">
-		<h1>Recommend For You</h1>
-	</div>
-	<div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue my-4">
+<div class="py-10">
+	<Header />
+	<!-- <div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue my-4">
 		<h2
 			class="absolute top-0 left-4 -translate-y-1/2 bg-white p-1 px-2 text-drexel-dark-blue rounded-full"
 		>
@@ -55,7 +59,7 @@
 		>
 			Search Again
 		</a>
-	</div>
+	</div> -->
 	<div class="grid grid-cols-2 font-semibold py-4">
 		{#each majorsMatchTags as major, i}
 			<a href="/{major.attributes.shorthand}">
@@ -101,7 +105,25 @@
 			</a>
 		{/each} -->
 	</div>
-
+	<SubHeader />
+	<div class="grid grid-cols-2 font-semibold px-4">
+		{#each allMajors as major}
+			<a href="/{major.attributes.shorthand}">
+				<div class="m-2 relative rounded-lg overflow-hidden text-white">
+					<img
+						src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
+						alt={major.attributes.banner_image.data.attributes.alternativeText}
+						class="object-cover w-full aspect-[3/4]"
+					/>
+					<div
+						class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-2"
+					>
+						{major.attributes.name}
+					</div>
+				</div>
+			</a>
+		{/each}
+	</div>
 	<!-- <div class="flex justify-center">
         {#if currentMajor < tags.length}
 		need currentMajor = currentMajor + tags.length - currentMajor
