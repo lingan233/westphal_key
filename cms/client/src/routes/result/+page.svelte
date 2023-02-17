@@ -44,18 +44,15 @@
 		>
 			Interests Picked
 		</h2>
-		<div class="flex max-h-full flex-wrap gap-2 overflow-scroll px-4 py-2 pt-5 align-top">
+		<div class="flex max-h-full flex-wrap gap-2 overflow-auto px-4 py-2 pt-5 align-top">
 			{#each tags as tag}
 				<button class="rounded-lg border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue">
 					<p>{tag}</p>
 				</button>
 			{/each}
 		</div>
-		<a
-			href="/quiz"
-			class="absolute bottom-0 right-4 translate-y-2/3 text-white bg-drexel-light-blue rounded-full py-1 px-4 m-1 text-sm border-4 border-white"
-		>
-			Search Again
+		<a href="/quiz" class="absolute bottom-0 right-4 translate-y-2/3 text-white bg-drexel-light-blue rounded-full py-1 px-4 m-1 text-sm border-4 border-white">
+		  Search Again
 		</a>
 	</div>
 	<div class="grid grid-cols-2 font-semibold pt-2 pb-8 px-4">
