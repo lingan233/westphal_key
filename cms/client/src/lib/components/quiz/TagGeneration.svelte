@@ -7,7 +7,7 @@
 	export let selected_tags;
 	let container;
 
-	$: tags = tags;
+	$: tags = tags.sort(); // sort the tags alphabetically
 
 	function onTagSelect(event) {
 		dispatch('onTagSelectBubble', event.detail);
