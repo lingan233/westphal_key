@@ -1,4 +1,5 @@
 <script>
+	import { swipe } from 'svelte-gestures';
 	import { writable } from 'svelte/store';
 	import SectionTitle from '$lib/components/SectionTitle.svelte';
 
@@ -41,10 +42,22 @@
 			}
 		});
 	};
+
+	const handler = (e) => {
+		if (e.detail.direction === 'left') {
+			nextSlide();
+		} else if (e.detail.direction === 'right') {
+			prevSlide();
+		}
+	};
 </script>
 
 <SectionTitle section_title="Fundamentals" title_position="left" />
-<div class="relative md:flex md:overflow-x-auto md:overflow-y-hidden md:p-5 md:pt-2 md:gap-8">
+<div
+	class="relative md:flex md:overflow-x-auto md:overflow-y-hidden md:p-5 md:pt-2 md:gap-8"
+	use:swipe={{ timeframe: 300, minSwipeDistance: 60 }}
+	on:swipe={(e) => handler(e)}
+>
 	<div
 		class={`md:w-[30rem] md:shrink-0 lg:w-[35rem] ${
 			active_slide_value === 0 ? 'block' : 'hidden md:block'
