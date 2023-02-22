@@ -1,5 +1,5 @@
 <script>
-	import Header from '$lib/components/result/Header.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import SubHeader from '$lib/components/result/SubHeader.svelte';
 	import { onMount } from 'svelte';
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
@@ -37,7 +37,7 @@
 </script>
 
 <div class="py-10">
-	<Header />
+	<Header h1={"Recommended for you"} p={"Degrees based on your interests"} />
 	<div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue mx-4 my-8">
 		<h2
 			class="absolute top-0 left-4 -translate-y-1/2 bg-white p-1 px-2 text-drexel-dark-blue rounded-full"

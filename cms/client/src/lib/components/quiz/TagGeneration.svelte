@@ -1,33 +1,61 @@
 <script>
 	import Pill from '$lib/components/Pill.svelte';
-	import { createEventDispatcher } from 'svelte';
+	import { afterUpdate, createEventDispatcher, onMount } from 'svelte';
+	import { group_by_initial } from '$lib/functions/GroupByInitial';
 	const dispatch = createEventDispatcher();
 
-	export let tags;
+	export var tags;
+	var rendered_tags = [];
 	export let selected_tags;
-	let container;
-
-	$: tags = tags.sort(); // sort the tags alphabetically
 
 	function onTagSelect(event) {
 		dispatch('onTagSelectBubble', event.detail);
 	}
+
+	function log() {
+		console.log(container);
+	}
 </script>
 
-<div class="flex overflow-x-auto overflow-y-hidden p-5 gap-4">
-	<div
-		bind:this={container}
-		class="flex shrink-0 flex-wrap items-start gap-2 content-start max-h-[280px] max-w-[307.08px] overflow-y-hidden"
-	>
-		{#each tags.slice(0, 55) as tag}
+<!-- <div class="flex overflow-x-auto p-5 gap-4"> -->
+<div class=" overflow-x-scroll m-4 pb-8">
+	{#if tags}
+		<div class="grid gap-6 max-w-max" style="grid-template-columns: repeat({tags.length}, 1fr)">
+			{#each tags as tagGroup}
+				<div class="flex flex-row w-[80vw] h-full flex-wrap shrink-1 gap-2">
+					{#each tagGroup as tag}
+						{#if selected_tags.includes(tag)}
+							<Pill on:onTagSelect={onTagSelect} {tag} selected />
+						{:else}
+							<Pill on:onTagSelect={onTagSelect} {tag} />
+						{/if}
+					{/each}
+				</div>
+			{/each}
+		</div>
+	{/if}
+</div>
+
+<!-- <div class="flex shrink-0 flex-wrap items-start gap-2 content-start max-w-[80vw] overflow-scroll">
+	{#if tags}
+		{#each tags as tagGroup}
+			<div class="flex max-w-full shrink-0 flex-wrap items-start gap-2">
+				{#each tagGroup as tag}
+					<Pill on:onTagSelect={onTagSelect} {tag} />
+				{/each}
+			</div>
+		{/each}
+	{/if} -->
+<!-- {#if rendered_tags}
+		{#each rendered_tags as tag}
 			{#if selected_tags.includes(tag)}
-				<Pill on:onTagSelect={onTagSelect} {tag} selected />
+				<Pill on:onTagSelect={onTagSelect} {tag} />
 			{:else}
 				<Pill on:onTagSelect={onTagSelect} {tag} />
 			{/if}
 		{/each}
-	</div>
-	<!-- <div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
+	{/if} -->
+<!-- <div class="flex shrink-0 flex-wrap items-start gap-2 w-11/12 content-start">
 		{#each tags.slice(15, 29) as tag}
 			{#if selected_tags.includes(tag)}
 				<Pill on:onTagSelect={onTagSelect} {tag} selected />
@@ -45,4 +73,4 @@
 			{/if}
 		{/each}
 	</div> -->
-</div>
+<!-- </div> -->

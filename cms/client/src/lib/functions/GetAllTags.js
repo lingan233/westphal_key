@@ -5,6 +5,5 @@ export function get_all_tags(data) {
 		let tag = data[i].attributes.tag;
 		array.push(tag);
 	}
-
 	return array;
 }
