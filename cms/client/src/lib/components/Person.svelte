@@ -9,7 +9,7 @@
 
 <div class="ml-10 mr-8">
 	<div class="relative h-[20rem] w-[16rem]">
-		<div class="absolute h-[20rem] w-[16rem]" style="background-color: {bg_color}" />
+		<div class="absolute h-[30rem] w-[16rem]" style="background-color: {bg_color}" />
 		<div class="absolute top-6 -left-8 w-full">
 			<img alt={alt_text} src={img} class="aspect-ratio-[0.75] w-[14rem]" />
 			<p class="relative left-14 top-2 text-white">

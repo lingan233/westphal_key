@@ -7,6 +7,16 @@
 	import { onMount } from 'svelte';
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 	import { get_all_tags } from '$lib/functions/GetAllTags';
+	import Loading from '../../lib/components/loading.svelte';
+
+	//here is the code for loading screen before quiz page
+	let isLoading = true;
+	// Wait for the 'loaded' event before hiding the loading screen
+	function handleLoaded() {
+		isLoading = false;
+	}
+	// Call handleLoaded after 2 seconds
+	setTimeout(handleLoaded, 2000);
 
 	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/tags`;
 	onMount(async function () {
@@ -33,6 +43,10 @@
 		}
 	}
 </script>
+
+{#if isLoading}
+	<Loading message1="Welcome!" message2="You can start by picking out your interest..." />
+{/if}
 
 <main>
 	<Header h1={"Pick your interests"} p={"Choose as many tags as you like!"} />

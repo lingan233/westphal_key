@@ -3,6 +3,16 @@
 	import SubHeader from '$lib/components/result/SubHeader.svelte';
 	import { onMount } from 'svelte';
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
+	import Loading from '../../lib/components/loading.svelte';
+
+	//here is the code for loading screen before result page
+	let isLoading = true;
+	// Wait for the 'loaded' event before hiding the loading screen
+	function handleLoaded() {
+		isLoading = false;
+	}
+	// Call handleLoaded after 2 seconds
+	setTimeout(handleLoaded, 2000);
 
 	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/majors?populate=*`;
 	let tags = [];
@@ -35,6 +45,10 @@
 			});
 	});
 </script>
+
+{#if isLoading}
+	<Loading message1="Just a second," message2="Your result will be right here." />
+{/if}
 
 <div class="py-10">
 	<Header h1={"Recommended for you"} p={"Degrees based on your interests"} />

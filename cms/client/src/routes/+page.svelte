@@ -2,7 +2,7 @@
 	import finger_click from '$lib/images/FingerClick.svg';
 </script>
 
-<a href="/loading">
+<a href="/quiz">
 	<div
 		style="background-image: url('https://res.cloudinary.com/drljdv2k2/image/upload/v1675464469/Westphal%20Touchscreen/westphal_feature_static_i6wewj.jpg')"
 		class="h-[100vh] bg-center bg-cover"
