@@ -39,7 +39,7 @@
 	<div
 		class="flex flex-col h-full w-full sm:flex-row-reverse sm:justify-evenly sm:content-middle sm:px-[5vw]"
 	>
-		<div class="sm:max-w-[60vw]">
+		<div class="sm:max-w-[50vw] sm:pt-6 lg:max-w-[60vw]">
 			<TagGeneration
 				on:onTagSelectBubble={onTagSelect}
 				tags={group_by_initial($displaying_tags)}
@@ -47,7 +47,7 @@
 			/>
 		</div>
 
-		<div class="sm:w-full sm:max-w-[40vw] sm:max-h-[80vh]">
+		<div class="sm:w-full sm:max-w-[50vw] lg:max-w-[40vw] sm:max-h-[80vh]">
 			<SelectedTags on:onTagClose={onTagClose} selected_tags={$selected_tags} />
 		</div>
 	</div>
