@@ -50,8 +50,8 @@
 	<Loading message1="Just a second," message2="Your result will be right here." />
 {/if}
 
-<div class="py-10">
-	<Header h1={"Recommended for you"} p={"Degrees based on your interests"} />
+<div class="py-10  max-w-[1100px] mx-auto">
+	<Header h1={'Recommended for you'} p={'Degrees based on your interests'} />
 	<div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue mx-4 my-8">
 		<h2
 			class="absolute top-0 left-4 -translate-y-1/2 bg-white p-1 px-2 text-drexel-dark-blue rounded-full"
@@ -65,11 +65,14 @@
 				</button>
 			{/each}
 		</div>
-		<a href="/quiz" class="absolute bottom-0 right-4 translate-y-2/3 text-white bg-drexel-light-blue rounded-full py-1 px-4 m-1 text-sm border-4 border-white">
-		  Search Again
+		<a
+			href="/quiz"
+			class="absolute bottom-0 right-4 translate-y-2/3 text-white bg-drexel-light-blue rounded-full py-1 px-4 m-1 text-sm border-4 border-white"
+		>
+			Start Over
 		</a>
 	</div>
-	<div class="grid grid-cols-2 font-semibold pt-2 pb-8 px-4">
+	<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 font-semibold pt-2 pb-8 px-4">
 		{#each majorsMatchTags as major, i}
 			<a href="/{major.attributes.shorthand}">
 				<div class="m-2 relative rounded-lg text-white">
@@ -86,7 +89,7 @@
 						class="object-cover w-full aspect-[3/4]"
 					/>
 					<div
-						class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-2"
+						class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-[8%]"
 					>
 						{major.attributes.name}
 					</div>
@@ -111,7 +114,7 @@
 		{/each} -->
 	</div>
 	<SubHeader />
-	<div class="grid grid-cols-2 font-semibold px-4">
+	<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 font-semibold px-4">
 		{#each allMajors as major}
 			<a href="/{major.attributes.shorthand}">
 				<div class="m-2 relative rounded-lg overflow-hidden text-white">
@@ -121,7 +124,7 @@
 						class="object-cover w-full aspect-[3/4]"
 					/>
 					<div
-						class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-2"
+						class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-[8%]"
 					>
 						{major.attributes.name}
 					</div>

@@ -4,7 +4,7 @@ export let p
 
 </script>
 
-<div class="relative mt-16 mb-8">
+<div class="relative">
 	<div class="absolute h-0.5 w-full bg-drexel-yellow top-4 -z-10" />
 	<div class="ml-[5%] px-2 bg-white z-50 w-max">
 		<h1 class="text-2xl font-bold text-drexel-dark-blue">{h1}</h1>

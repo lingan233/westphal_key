@@ -4,6 +4,8 @@ export function group_by_initial(array) {
 		return {};
 	}
 
+	array = array.sort();
+
 	acc = array.reduce((acc, tag) => {
 		let firstChar = tag[0].toLowerCase();
 		if (!acc[firstChar]) {
@@ -18,25 +20,34 @@ export function group_by_initial(array) {
 		return acc[key];
 	});
 
-	let beforeArr = arr;
-	let afterArr = [];
-	let tempArr = [];
+	let beforeArr = arr; //copy of original array
+	let afterArr = []; //the array that will get returned, containing multiple arrays that represents the tags in each div
+	let tempArr = []; //
 
 	while (beforeArr.length > 0) {
-		// console.log(beforeArr[0].length, afterArr[afterArr.length]?.length);
-		console.log('After Arr', afterArr);
-		console.log(tempArr.length + beforeArr[0].length, 'Before Arr', beforeArr);
-		if (tempArr.length + beforeArr[0].length < 12 && beforeArr.length > 1) {
+		if (tempArr.length + beforeArr[0].length <= 12 && beforeArr.length > 1) {
+			console.log('new', beforeArr[0]);
 			beforeArr[0].forEach((tag) => {
 				tempArr.push(tag);
 			});
-		} else if (beforeArr.length <= 1) {
+			console.log('temp', tempArr);
+		} else if (beforeArr.length == 1 && tempArr.length + beforeArr[0].length <= 12) {
+			beforeArr[0].forEach((tag) => {
+				tempArr.push(tag);
+			});
 			afterArr.push(tempArr);
-			tempArr = [];
+			console.log('PUSH');
 		} else {
 			afterArr.push(tempArr);
+			console.log('PUSH');
 			tempArr = [];
+			console.log('new', beforeArr[0]);
+			beforeArr[0].forEach((tag) => {
+				tempArr.push(tag);
+			});
+			console.log('temp', tempArr);
 		}
+		console.log('NEXT');
 		beforeArr.shift();
 	}
 
