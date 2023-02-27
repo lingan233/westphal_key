@@ -12,9 +12,9 @@
 </script>
 
 <div class="p-5 pt-10 h-full">
-	<div class="relative h-full min-h-[10rem] sm:h-full rounded-3xl border-2 border-drexel-light-blue">
+	<div class="relative h-[12rem] sm:h-full rounded-3xl border-2 border-drexel-light-blue">
 		<a
-			class="absolute top-0 left-4 -translate-y-1/2 bg-drexel-light-blue px-4 py-1 text-white text-sm rounded-2xl border-4 border-white"
+			class="absolute top-0 left-4 sm:top-auto sm:left-auto sm:bottom-0 sm:right-4 -translate-y-1/2 sm:translate-y-1/2 bg-drexel-light-blue px-4 py-1 text-white text-sm rounded-2xl border-4 border-white"
 			href="/result?data={selected_tags}"
 		>
 			View Results

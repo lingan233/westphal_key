@@ -36,7 +36,7 @@
 	});
 </script>
 
-<div class="py-10  max-w-[1200px] mx-auto">
+<div class="py-10  max-w-[1100px] mx-auto">
 	<Header h1={'Recommended for you'} p={'Degrees based on your interests'} />
 	<div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue mx-4 my-8">
 		<h2
