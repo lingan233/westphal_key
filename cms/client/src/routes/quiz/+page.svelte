@@ -21,8 +21,7 @@
 	function onTagSelect(event) {
 		if ($all_tags.includes(event.detail) && !$selected_tags.includes(event.detail)) {
 			$selected_tags = [...$selected_tags, event.detail];
-		}
-		else{
+		} else {
 			$selected_tags = $selected_tags.filter(($all_tags) => $all_tags != event.detail);
 		}
 	}
@@ -34,15 +33,22 @@
 	}
 </script>
 
-<main>
-	<Header h1={"Pick your interests"} p={"Choose as many tags as you like!"} />
+<main class="h-screen pt-[10vh] sm:pt-[5vh] flex flex-col gap-[2vh] overflow-hidden">
+	<Header h1={'Pick your interests'} p={'Choose as many tags as you like!'} />
 
-	<div>
-		<TagGeneration
-			on:onTagSelectBubble={onTagSelect}
-			tags={group_by_initial($displaying_tags)}
-			selected_tags={$selected_tags}
-		/>
-		<SelectedTags on:onTagClose={onTagClose} selected_tags={$selected_tags} />
+	<div
+		class="flex flex-col h-full w-full sm:flex-row-reverse sm:justify-evenly sm:content-middle sm:px-[5vw]"
+	>
+		<div class="sm:max-w-[60vw]">
+			<TagGeneration
+				on:onTagSelectBubble={onTagSelect}
+				tags={group_by_initial($displaying_tags)}
+				selected_tags={$selected_tags}
+			/>
+		</div>
+
+		<div class="sm:w-full sm:max-w-[40vw] sm:max-h-[80vh]">
+			<SelectedTags on:onTagClose={onTagClose} selected_tags={$selected_tags} />
+		</div>
 	</div>
 </main>

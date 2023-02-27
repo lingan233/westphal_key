@@ -11,8 +11,8 @@
 	$: tags = selected_tags;
 </script>
 
-<div class="p-5 pt-10">
-	<div class="relative h-32 sm:h-full rounded-3xl border-2 border-drexel-light-blue">
+<div class="p-5 pt-10 h-full">
+	<div class="relative h-full min-h-[10rem] sm:h-full rounded-3xl border-2 border-drexel-light-blue">
 		<a
 			class="absolute top-0 left-4 -translate-y-1/2 bg-drexel-light-blue px-4 py-1 text-white text-sm rounded-2xl border-4 border-white"
 			href="/result?data={selected_tags}"
