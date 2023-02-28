@@ -15,7 +15,7 @@
 	<img src={back_arrow} alt="Back Arrow" class="bg-drexel-yellow h-10" />
 	<div
 		class={`flex items-center h-10 pr-3 bg-drexel-yellow transition-all duration-500 ease-in-out -z-10 ${
-			innerHeight / 3 < y ? '-translate-x-20' : 'translate-x-0'
+			innerHeight / 3 < y ? '-translate-x-14' : 'translate-x-0'
 		}`}
 	>
 		<p>Back</p>
