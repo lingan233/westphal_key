@@ -5,9 +5,9 @@
 	export let description;
 </script>
 
-<div>
+<div class="w-[90%] shrink-0 md:w-[30rem] lg:w-[35rem]">
 	<img alt={alt_text} src={img_url} class="" />
-	<div class="mx-auto w-[90%] md:w-[100%]">
+	<div class="">
 		<p class="mt-4 text-xl font-semibold text-drexel-light-blue">{heading}</p>
 		<p class="text-drexel-dark-blue">
 			{description}

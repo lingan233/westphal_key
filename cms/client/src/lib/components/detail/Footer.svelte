@@ -45,9 +45,9 @@
 </div>
 
 <div
-	class="hidden custom_600:flex gap-4 bg-drexel-dark-blue px-2 py-5 text-white text-xs items-center"
+	class="hidden custom_600:flex gap-4 bg-drexel-dark-blue px-8 py-5 text-white text-xs items-center"
 >
-	<img alt="Drexel Logo" class="w-[15%] h-full" src={LogoWhite} />
+	<img alt="Drexel Logo" class="w-[12%] h-full" src={LogoWhite} />
 	<p>
 		<span class="font-semibold">Drexel University</span><br />3141 Chestnut Street,<br
 		/>Philadelphia, PA 19104

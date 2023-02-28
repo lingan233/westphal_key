@@ -7,7 +7,7 @@
 	import { onMount } from 'svelte';
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 	import { get_all_tags } from '$lib/functions/GetAllTags';
-	import Loading from '../../lib/components/loading.svelte';
+	import Loading from '../../lib/components/Loading.svelte';
 
 	//here is the code for loading screen before quiz page
 	let isLoading = true;

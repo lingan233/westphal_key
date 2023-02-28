@@ -2,6 +2,7 @@
 	import { swipe } from 'svelte-gestures';
 	import { writable } from 'svelte/store';
 	import SectionTitle from '$lib/components/SectionTitle.svelte';
+	import Fundamental from '../Fundamental.svelte';
 
 	export let fundamental_image_1;
 	export let fundamental_heading_1;
@@ -17,43 +18,64 @@
 
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 
-	const active_slide = writable(0);
-	let active_slide_value;
-	active_slide.subscribe((value) => {
-		active_slide_value = value;
-	});
+	// const active_slide = writable(0);
+	// let active_slide_value;
+	// active_slide.subscribe((value) => {
+	// 	active_slide_value = value;
+	// });
 
-	const nextSlide = () => {
-		active_slide.update((n) => {
-			if (n < 2) {
-				return n + 1;
-			} else {
-				return 0;
-			}
-		});
-	};
+	// const nextSlide = () => {
+	// 	active_slide.update((n) => {
+	// 		if (n < 2) {
+	// 			return n + 1;
+	// 		} else {
+	// 			return 0;
+	// 		}
+	// 	});
+	// };
 
-	const prevSlide = () => {
-		active_slide.update((n) => {
-			if (n > 0) {
-				return n - 1;
-			} else {
-				return 2;
-			}
-		});
-	};
+	// const prevSlide = () => {
+	// 	active_slide.update((n) => {
+	// 		if (n > 0) {
+	// 			return n - 1;
+	// 		} else {
+	// 			return 2;
+	// 		}
+	// 	});
+	// };
 
-	const handler = (e) => {
-		if (e.detail.direction === 'left') {
-			nextSlide();
-		} else if (e.detail.direction === 'right') {
-			prevSlide();
-		}
-	};
+	// const handler = (e) => {
+	// 	if (e.detail.direction === 'left') {
+	// 		nextSlide();
+	// 	} else if (e.detail.direction === 'right') {
+	// 		prevSlide();
+	// 	}
+	// };
 </script>
 
 <SectionTitle section_title="Fundamentals" title_position="left" />
-<div
+<div class="mt-2 flex overflow-x-auto overflow-y-hidden p-5 gap-4 md:px-8">
+	<Fundamental
+		img_url={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_1.data.attributes.url}`}
+		alt_text={fundamental_image_1.data.attributes.alternativeText}
+		heading={fundamental_heading_1}
+		description={fundamental_description_1}
+	/>
+	<Fundamental
+		img_url={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_2.data.attributes.url}`}
+		alt_text={fundamental_image_2.data.attributes.alternativeText}
+		heading={fundamental_heading_2}
+		description={fundamental_description_2}
+	/>
+	<Fundamental
+		img_url={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_3.data.attributes.url}`}
+		alt_text={fundamental_image_3.data.attributes.alternativeText}
+		heading={fundamental_heading_3}
+		description={fundamental_description_3}
+	/>
+</div>
+
+<!-- <div
 	class="relative md:flex md:overflow-x-auto md:overflow-y-hidden md:p-5 md:pt-2 md:gap-8"
 	use:swipe={{ timeframe: 300, minSwipeDistance: 60 }}
 	on:swipe={(e) => handler(e)}
@@ -212,4 +234,4 @@
 			</p>
 		</div>
 	</div>
-</div>
+</div> -->

@@ -7,13 +7,13 @@
 	<div class="h-0.5 w-full bg-drexel-yellow" />
 	{#if title_position === 'left'}
 		<h2
-			class="absolute left-[10%] z-10 bg-white px-4 text-2xl font-bold text-drexel-light-blue md:text-3xl"
+			class="absolute left-[10%] z-10 bg-white px-4 text-2xl font-bold text-drexel-light-blue md:text-3xl lg:text-4xl"
 		>
 			{section_title}
 		</h2>
 	{:else if title_position === 'right'}
 		<h2
-			class="absolute right-[10%] z-10 bg-white px-4 text-2xl font-bold text-drexel-light-blue md:text-3xl"
+			class="absolute right-[10%] z-10 bg-white px-4 text-2xl font-bold text-drexel-light-blue md:text-3xl lg:text-4xl"
 		>
 			{section_title}
 		</h2>
