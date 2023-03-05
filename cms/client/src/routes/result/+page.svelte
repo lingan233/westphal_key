@@ -61,7 +61,9 @@
 			</h2>
 			<div class="flex max-h-full flex-wrap gap-2 overflow-auto px-4 py-4 pt-5 align-top">
 				{#each tags as tag}
-					<button class="rounded-lg border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue">
+					<button
+						class="rounded-full border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue"
+					>
 						<p>{tag}</p>
 					</button>
 				{/each}

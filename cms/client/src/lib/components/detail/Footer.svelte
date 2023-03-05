@@ -2,6 +2,7 @@
 	import FooterLogo from '$lib/images/FooterLogo.png';
 	import LogoWhite from '$lib/images/LogoWhite.png';
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
+	import QrCode from 'svelte-qrcode';
 
 	export let shorthand;
 	export let qr_code;
@@ -29,7 +30,7 @@
 	</div>
 
 	<div class="w-36 shrink-0 bg-drexel-light-green px-5 pt-5 pb-3">
-		<img alt="QR Code" src={`${PUBLIC_STRAPI_SERVER_URL}${qr_code.data.attributes.url}`} />
+		<QrCode value={qr_code} color="#B7BF10" padding="2" />
 		<p class="pt-3 text-center text-lg text-white">SCAN ME</p>
 	</div>
 </div>
@@ -44,8 +45,9 @@
 	</div>
 </div>
 
+<!-- Desktop footer starts here -->
 <div
-	class="hidden custom_600:flex gap-4 bg-drexel-dark-blue px-8 py-5 text-white text-xs items-center"
+	class="relative hidden custom_600:flex gap-4 bg-drexel-dark-blue px-8 py-5 text-white text-xs items-center"
 >
 	<img alt="Drexel Logo" class="w-[12%] h-full" src={LogoWhite} />
 	<p>
@@ -54,6 +56,14 @@
 	</p>
 	<p>Tel: 215.895.2000</p>
 	<p>&copy All Rights Reserved</p>
+	<div
+		class="bg-white rounded-lg overflow-hidden py-1 border-drexel-dark-blue border-2 absolute right-8 bottom-5"
+	>
+		<div class="flex p-1 justify-center">
+			<QrCode value={qr_code} color="#102A4C" padding="0" size="100" />
+		</div>
+		<p class="text-center text-sm text-drexel-dark-blue">Explore {shorthand}</p>
+	</div>
 </div>
 
 <!-- <div class="hidden custom_600:block w-36 shrink-0 bg-white">
