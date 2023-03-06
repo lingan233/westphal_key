@@ -6,7 +6,7 @@
 
 	export var tags;
 	var rendered_tags = [];
-	var initials = "";
+	var initials = '';
 
 	export let selected_tags;
 
@@ -29,7 +29,7 @@
 			let callCount = incrementCallCount();
 			let initials = [];
 			if (callCount === 1) {
-				initials.push('#');
+				initials.push('A');
 				initials.push(tagGroup[tagGroup.length - 1].charAt(0));
 			} else if (callCount === tags.length) {
 				initials.push(tagGroup[0].charAt(0));
@@ -44,7 +44,6 @@
 			}
 		};
 		allInitials = tags.flatMap(getInitials);
-
 	});
 </script>
 

@@ -54,7 +54,7 @@
 </script>
 
 <SectionTitle section_title="Fundamentals" title_position="left" />
-<div class="mt-2 flex overflow-x-auto overflow-y-hidden p-5 gap-4 md:px-8">
+<div class="mt-2 flex overflow-x-auto overflow-y-hidden p-5 pt-2 gap-4 md:px-8">
 	<Fundamental
 		img_url={`${PUBLIC_STRAPI_SERVER_URL}${fundamental_image_1.data.attributes.url}`}
 		alt_text={fundamental_image_1.data.attributes.alternativeText}
