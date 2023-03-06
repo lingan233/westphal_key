@@ -26,32 +26,32 @@ export function group_by_initial(array) {
 
 	while (beforeArr.length > 0) {
 		if (tempArr.length + beforeArr[0].length <= 12 && beforeArr.length > 1) {
-			console.log('new', beforeArr[0]);
+			// console.log('new', beforeArr[0]);
 			beforeArr[0].forEach((tag) => {
 				tempArr.push(tag);
 			});
-			console.log('temp', tempArr);
+			// console.log('temp', tempArr);
 		} else if (beforeArr.length == 1 && tempArr.length + beforeArr[0].length <= 12) {
 			beforeArr[0].forEach((tag) => {
 				tempArr.push(tag);
 			});
 			afterArr.push(tempArr);
-			console.log('PUSH');
+			// console.log('PUSH');
 		} else {
 			afterArr.push(tempArr);
-			console.log('PUSH');
+			// console.log('PUSH');
 			tempArr = [];
-			console.log('new', beforeArr[0]);
+			// console.log('new', beforeArr[0]);
 			beforeArr[0].forEach((tag) => {
 				tempArr.push(tag);
 			});
 			console.log('temp', tempArr);
 		}
-		console.log('NEXT');
+		// console.log('NEXT');
 		beforeArr.shift();
 	}
 
-	console.log('Final After Arr', afterArr);
+	// console.log('Final After Arr', afterArr);
 
 	return afterArr;
 }

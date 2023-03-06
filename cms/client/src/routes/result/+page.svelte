@@ -11,7 +11,7 @@
 	function handleLoaded() {
 		isLoading = false;
 	}
-	// Call handleLoaded after 2 seconds
+	// Call handleLoaded after 3 seconds
 	setTimeout(handleLoaded, 3000);
 
 	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/majors?populate=*`;
@@ -48,7 +48,7 @@
 
 {#if isLoading}
 	<Loading message1="Just a second," message2="Your result will be right here." />
-{/if}
+{:else}
 
 <div class="py-10">
 	<Header h1={'Recommended for you'} p={'Degrees based on your interests'} />
@@ -61,7 +61,7 @@
 			</h2>
 			<div class="flex max-h-full flex-wrap gap-2 overflow-auto px-4 py-4 pt-5 align-top">
 				{#each tags as tag}
-					<button class="rounded-lg border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue">
+					<button class="rounded-2xl border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue">
 						<p>{tag}</p>
 					</button>
 				{/each}
@@ -162,3 +162,4 @@
         {/if}        
     </div> -->
 </div>
+{/if}
