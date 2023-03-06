@@ -196,15 +196,15 @@
       "required": true
     },
     "person_1_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "person_1_name": {
       "type": "string",
@@ -216,18 +216,18 @@
     },
     "person_1_info": {
       "type": "string",
-      "maxLength": 13
+      "maxLength": 15
     },
     "person_2_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "person_2_name": {
       "type": "string",
@@ -239,18 +239,18 @@
     },
     "person_2_info": {
       "type": "string",
-      "maxLength": 13
+      "maxLength": 15
     },
     "person_3_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "person_3_name": {
       "type": "string",
@@ -262,18 +262,23 @@
     },
     "person_3_info": {
       "type": "string",
-      "maxLength": 13
+      "maxLength": 15
     },
     "qr_code": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
+    },
+    "website_url": {
+      "type": "string",
+      "required": true,
+      "default": "https://drexel.edu/westphal/academics/undergraduate/"
     }
   }
 }
