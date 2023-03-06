@@ -20,6 +20,7 @@ module.exports = {
 			screens: {
 				custom_500: '500px',
 				custom_600: '600px',
+				custom_800: '800px',
 				custom_900: '900px'
 			}
 		}
