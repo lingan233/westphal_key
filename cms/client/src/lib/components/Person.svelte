@@ -10,13 +10,15 @@
 <div class="ml-10 mr-8">
 	<div class="relative h-80 w-64 top-6">
 		<div
-			class="absolute h-64 w-80 -rotate-90 -left-8 flex justify-center"
+			class="absolute h-64 w-80 -rotate-90 -left-8 flex justify-center pb-2"
 			style="background-color: {bg_color}"
 		>
-			<p class="w-fit self-end text-white/30 font-bold text-[2.5rem] leading-none">{info}</p>
+			<p class="w-fit self-end text-white/30 font-bold text-[2.25rem] leading-none">
+				{info}
+			</p>
 		</div>
 		<div class="absolute w-full top-0">
-			<img alt={alt_text} src={img} class="w-52 relative -left-4" />
+			<img alt={alt_text} src={img} class="w-52 relative -left-[1.5rem]" />
 			<p class="relative left-4 text-white text-sm w-40 pt-[0.35rem]">
 				<span class="text-base font-semibold">{name}</span><br />
 				{job}
