@@ -14,7 +14,7 @@
 	let scrollStateValue;
 	scrollState.subscribe((value) => {
 		scrollStateValue = value;
-		console.log(scrollStateValue);
+		// console.log(scrollStateValue);
 	});
 
 	const scrollPastDetailOverview = () => {
@@ -27,7 +27,7 @@
 		// 	scrollState.set(true);
 		// }
 		// console.log(scrollState);
-		console.log('scroll');
+		// console.log('scroll');
 	};
 </script>
 
