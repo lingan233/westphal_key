@@ -2,10 +2,13 @@
 	import FooterLogo from '$lib/images/FooterLogo.png';
 	import LogoWhite from '$lib/images/LogoWhite.png';
 	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
-	import QrCode from 'svelte-qrcode';
+	import { QRCodeImage } from 'svelte-qrcode-image';
 
 	export let shorthand;
 	export let qr_code;
+	export let website_url;
+
+	console.log(website_url);
 </script>
 
 <div class="flex custom_600:hidden">
@@ -30,7 +33,8 @@
 	</div>
 
 	<div class="w-36 shrink-0 bg-drexel-light-green px-5 pt-5 pb-3">
-		<QrCode value={qr_code} color="#B7BF10" padding="2" />
+		<!-- <QrCode value={website_url} color="#B7BF10" padding="2" /> -->
+		<QRCodeImage text={website_url} />
 		<p class="pt-3 text-center text-lg text-white">SCAN ME</p>
 	</div>
 </div>
@@ -60,7 +64,8 @@
 		class="bg-white rounded-lg overflow-hidden py-1 border-drexel-dark-blue border-2 absolute right-8 bottom-5"
 	>
 		<div class="flex p-1 justify-center">
-			<QrCode value={qr_code} color="#102A4C" padding="0" size="100" />
+			<!-- <QrCode value={website_url} color="#102A4C" padding="0" size="100" /> -->
+			<QRCodeImage text={website_url} />
 		</div>
 		<p class="text-center text-sm text-drexel-dark-blue">Explore {shorthand}</p>
 	</div>

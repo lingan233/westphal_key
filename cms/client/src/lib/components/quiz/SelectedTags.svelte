@@ -20,7 +20,7 @@
 			View Results
 		</a>
 		<div
-			class="flex h-[20vh] flex-wrap gap-2 overflow-auto px-4 py-2 pt-6 align-top  custom_900:w-[40vw]"
+			class="flex h-[20vh] custom_900:h-full flex-wrap gap-2 overflow-auto px-4 py-2 pt-6 content-start custom_900:w-full"
 		>
 			{#each tags as tag}
 				<PillCloseable on:onTagClose={onTagClose} {tag} />

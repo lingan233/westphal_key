@@ -47,7 +47,9 @@
 </script>
 
 {#if isLoading}
-	<Loading message1="Just a second," message2="Your result will be right here." />
+	<div class="w-screen h-screen flex items-center justify-center">
+		<Loading message1="Just a second," message2="Your result will be right here." />
+	</div>
 {:else}
 	<div class="py-10">
 		<Header h1={'Recommended for you'} p={'Degrees based on your interests'} />
