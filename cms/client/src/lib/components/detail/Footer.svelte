@@ -1,17 +1,15 @@
 <script>
 	import FooterLogo from '$lib/images/FooterLogo.png';
 	import LogoWhite from '$lib/images/LogoWhite.png';
-	import { PUBLIC_STRAPI_SERVER_URL } from '$env/static/public';
 	import { QRCodeImage } from 'svelte-qrcode-image';
 
 	export let shorthand;
-	export let qr_code;
 	export let website_url;
 
 	console.log(website_url);
 </script>
 
-<div class="flex custom_600:hidden">
+<div class="flex custom_650:hidden">
 	<div class="relative w-full bg-drexel-light-blue">
 		<div class="absolute top-[40%] custom_500:top-[30%] right-10 my-auto">
 			<svg
@@ -39,7 +37,7 @@
 	</div>
 </div>
 
-<div class="relative custom_600:hidden">
+<div class="relative custom_650:hidden">
 	<img alt="Ambition Can't Wait" class="absolute bottom-0 left-[5%] h-24" src={FooterLogo} />
 	<div class="flex h-20 items-center justify-end bg-drexel-dark-blue px-[5%]">
 		<p class="text-right text-xs text-white">
@@ -51,7 +49,7 @@
 
 <!-- Desktop footer starts here -->
 <div
-	class="relative hidden custom_600:flex gap-4 bg-drexel-dark-blue px-8 py-5 text-white text-xs items-center"
+	class="relative hidden custom_650:flex gap-4 bg-drexel-dark-blue px-8 py-5 text-white text-xs items-center"
 >
 	<img alt="Drexel Logo" class="w-[12%] h-full" src={LogoWhite} />
 	<p>
@@ -65,7 +63,7 @@
 	>
 		<div class="flex p-1 justify-center">
 			<!-- <QrCode value={website_url} color="#102A4C" padding="0" size="100" /> -->
-			<QRCodeImage text={website_url} />
+			<QRCodeImage text={website_url} displayWidth="100" />
 		</div>
 		<p class="text-center text-sm text-drexel-dark-blue">Explore {shorthand}</p>
 	</div>
