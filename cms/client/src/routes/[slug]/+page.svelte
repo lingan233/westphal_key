@@ -103,6 +103,10 @@
 	</div>
 
 	<div class="mt-8">
-		<Footer shorthand={data.attributes.shorthand} qr_code={data.attributes.qr_code} />
+		<Footer
+			shorthand={data.attributes.shorthand}
+			qr_code={data.attributes.qr_code}
+			website_url={data.attributes.website_url}
+		/>
 	</div>
 </div>

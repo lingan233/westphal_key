@@ -47,56 +47,59 @@
 </script>
 
 {#if isLoading}
-	<Loading message1="Just a second," message2="Your result will be right here." />
+	<div class="w-screen h-screen flex items-center justify-center">
+		<Loading message1="Just a second," message2="Your result will be right here." />
+	</div>
 {:else}
-
-<div class="py-10">
-	<Header h1={'Recommended for you'} p={'Degrees based on your interests'} />
-	<div class="mx-auto custom_900:w-[90%]">
-		<div class="relative h-32 sm:h-28 rounded-3xl border-2 border-drexel-light-blue mx-4 my-8">
-			<h2
-				class="absolute top-0 left-4 -translate-y-1/2 bg-white p-1 px-2 text-drexel-dark-blue rounded-full"
-			>
-				Interests Picked
-			</h2>
-			<div class="flex max-h-full flex-wrap gap-2 overflow-auto px-4 py-4 pt-5 align-top">
-				{#each tags as tag}
-					<button class="rounded-2xl border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue">
-						<p>{tag}</p>
-					</button>
-				{/each}
-			</div>
-			<a
-				href="/quiz"
-				class="absolute bottom-0 right-4 translate-y-2/3 text-white bg-drexel-light-blue rounded-full py-1 px-4 m-1 text-sm border-4 border-white"
-			>
-				Start Over
-			</a>
-		</div>
-		<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 font-semibold pt-2 pb-8 px-4">
-			{#each majorsMatchTags as major, i}
-				<a href="/{major.attributes.shorthand}">
-					<div class="m-2 relative text-white">
-						{#if i == 0}
-							<div
-								class="border-4 border-white py-1 px-4 text-base text-drexel-dark-blue absolute -left-3 -top-3 rounded-full bg-drexel-yellow"
-							>
-								Best Match
-							</div>
-						{/if}
-						<img
-							src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
-							alt={major.attributes.banner_image.data.attributes.alternativeText}
-							class="object-cover w-full aspect-[3/4] rounded-lg"
-						/>
-						<div
-							class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-[8%] rounded-lg lg:text-xl lg:leading-6"
+	<div class="py-10">
+		<Header h1={'Recommended for you'} p={'Degrees based on your interests'} />
+		<div class="mx-auto custom_900:w-[90%]">
+			<div class="relative h-32 sm:h-28 rounded-3xl border-2 border-drexel-light-blue mx-4 my-8">
+				<h2
+					class="absolute top-0 left-4 -translate-y-1/2 bg-white p-1 px-2 text-drexel-dark-blue rounded-full"
+				>
+					Interests Picked
+				</h2>
+				<div class="flex max-h-full flex-wrap gap-2 overflow-auto px-4 py-4 pt-5 align-top">
+					{#each tags as tag}
+						<button
+							class="rounded-full border border-drexel-light-blue px-3 h-8 text-drexel-dark-blue"
 						>
-							{major.attributes.name}
-						</div>
-					</div>
+							<p>{tag}</p>
+						</button>
+					{/each}
+				</div>
+				<a
+					href="/quiz"
+					class="absolute bottom-0 right-4 translate-y-2/3 text-white bg-drexel-light-blue rounded-full py-1 px-4 m-1 text-sm border-4 border-white"
+				>
+					Start Over
 				</a>
-				<!-- <a href="/{major.attributes.shorthand}">
+			</div>
+			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 font-semibold pt-2 pb-8 px-4">
+				{#each majorsMatchTags as major, i}
+					<a href="/{major.attributes.shorthand}">
+						<div class="m-2 relative text-white">
+							{#if i == 0}
+								<div
+									class="border-4 border-white py-1 px-4 text-base text-drexel-dark-blue absolute -left-3 -top-3 rounded-full bg-drexel-yellow"
+								>
+									Best Match
+								</div>
+							{/if}
+							<img
+								src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
+								alt={major.attributes.banner_image.data.attributes.alternativeText}
+								class="object-cover w-full aspect-[3/4] rounded-lg"
+							/>
+							<div
+								class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-[8%] rounded-lg lg:text-xl lg:leading-6"
+							>
+								{major.attributes.name}
+							</div>
+						</div>
+					</a>
+					<!-- <a href="/{major.attributes.shorthand}">
 					<div class="m-2 relative rounded-lg overflow-hidden text-white">
 						<img
 							src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
@@ -110,8 +113,8 @@
 						</div>
 					</div>
 				</a> -->
-			{/each}
-			<!-- {#each data.majors as major}
+				{/each}
+				<!-- {#each data.majors as major}
 				<a href="/detail/{major.id}">
 					<div class="m-2 relative rounded-lg overflow-hidden text-white">
 						<img
@@ -127,30 +130,30 @@
 					</div>
 				</a>
 			{/each} -->
+			</div>
 		</div>
-	</div>
-	<SubHeader />
-	<div
-		class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 font-semibold px-4 custom_900:w-[90%] mx-auto"
-	>
-		{#each allMajors as major}
-			<a href="/{major.attributes.shorthand}">
-				<div class="m-2 relative rounded-lg overflow-hidden text-white">
-					<img
-						src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
-						alt={major.attributes.banner_image.data.attributes.alternativeText}
-						class="object-cover w-full aspect-[3/4]"
-					/>
-					<div
-						class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-[8%] lg:text-xl lg:leading-6"
-					>
-						{major.attributes.name}
+		<SubHeader />
+		<div
+			class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 font-semibold px-4 custom_900:w-[90%] mx-auto"
+		>
+			{#each allMajors as major}
+				<a href="/{major.attributes.shorthand}">
+					<div class="m-2 relative rounded-lg overflow-hidden text-white">
+						<img
+							src={`${PUBLIC_STRAPI_SERVER_URL}${major.attributes.banner_image.data.attributes.url}`}
+							alt={major.attributes.banner_image.data.attributes.alternativeText}
+							class="object-cover w-full aspect-[3/4]"
+						/>
+						<div
+							class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-[8%] lg:text-xl lg:leading-6"
+						>
+							{major.attributes.name}
+						</div>
 					</div>
-				</div>
-			</a>
-		{/each}
-	</div>
-	<!-- <div class="flex justify-center">
+				</a>
+			{/each}
+		</div>
+		<!-- <div class="flex justify-center">
         {#if currentMajor < tags.length}
 		need currentMajor = currentMajor + tags.length - currentMajor
         <button on:click={() => currentMajor = tags.length}
@@ -161,5 +164,5 @@
         </button>
         {/if}        
     </div> -->
-</div>
+	</div>
 {/if}
