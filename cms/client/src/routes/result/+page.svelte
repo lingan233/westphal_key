@@ -12,7 +12,7 @@
 		isLoading = false;
 	}
 	// Call handleLoaded after 3 seconds
-	setTimeout(handleLoaded, 3000);
+	setTimeout(handleLoaded, 2000);
 
 	const endpoint = `${PUBLIC_STRAPI_SERVER_URL}/api/majors?populate=*`;
 	let tags = [];
