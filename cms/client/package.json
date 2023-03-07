@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-gestures": "^1.4.1"
+		"svelte-gestures": "^1.4.1",
+		"svelte-qrcode": "^1.0.0"
 	}
 }

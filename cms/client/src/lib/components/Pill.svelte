@@ -13,7 +13,7 @@
 
 <button
 	on:click={onTagSelect}
-	class={`rounded-2xl h-8 border border-drexel-light-blue px-4 py-1 text-sm font-medium
+	class={`rounded-full h-8 border border-drexel-light-blue px-4 py-1 text-sm font-medium
 	${selected ? 'bg-drexel-light-blue text-white' : 'text-drexel-dark-blue'}`}
 >
 	<p>
