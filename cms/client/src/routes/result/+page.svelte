@@ -48,7 +48,7 @@
 
 {#if isLoading}
 	<div class="w-screen h-screen flex items-center justify-center">
-		<Loading message1="Just a second," message2="Your result will be right here." />
+		<Loading />
 	</div>
 {:else}
 	<div class="py-10">
