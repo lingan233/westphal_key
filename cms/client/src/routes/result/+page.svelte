@@ -93,7 +93,7 @@
 								class="object-cover w-full aspect-[3/4] rounded-lg"
 							/>
 							<div
-								class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/50 leading-5 p-[8%] rounded-lg lg:text-xl lg:leading-6"
+								class="absolute w-full py-6 bottom-0 inset-x-0 bg-gradient-to-b from-transparent to-black/80 leading-5 p-[8%] rounded-lg lg:text-xl lg:leading-6"
 							>
 								{major.attributes.name}
 							</div>
